@@ -1,25 +1,46 @@
 export default defineNuxtConfig({
   typescript: {
-    strict: true
+    strict: true,
   },
   tailwindcss: {
-    exposeConfig: true
+    exposeConfig: true,
   },
   ssr: false,
   modules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss',
-    '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
-    '@nuxtjs/google-fonts',
-    'nuxt-icon'
+    "@nuxtjs/eslint-module",
+    "@nuxtjs/tailwindcss",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "@nuxtjs/google-fonts",
+    "nuxt-icon",
+    "@nuxtjs/i18n",
   ],
   googleFonts: {
     families: {
-      'Open+Sans': true
+      "Open+Sans": true,
     },
-    display: 'swap'
+    display: "swap",
   },
-  srcDir: 'frontend/',
-  serverDir: 'backend/'
-})
+  i18n: {
+    locales: [
+      {
+        code: "ru",
+        file: "ru.json",
+      },
+      {
+        code: "ua",
+        file: "ua.json",
+      },
+      {
+        code: "en",
+        file: "en.json",
+      },
+    ],
+    lazy: true,
+    langDir: "lang",
+    defaultLocale: "ua",
+    strategy: "no_prefix",
+  },
+  srcDir: "frontend/",
+  serverDir: "backend/",
+});
