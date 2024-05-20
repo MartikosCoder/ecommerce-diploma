@@ -1,66 +1,87 @@
 <script setup lang="ts">
-import { useCategories } from '~/store/admin/categories'
-import { useGoods } from '~/store/admin/goods'
+import { useCategories } from "~/store/admin/categories";
+import { useGoods } from "~/store/admin/goods";
 
-import { useGood } from '~/composables/admin/useGood'
+import { useGood } from "~/composables/admin/useGood";
 
 const props = defineProps<{
-  isOpened: boolean
-  id: number
-}>()
+  isOpened: boolean;
+  id: number;
+}>();
 
-const emit = defineEmits(['update:isOpened', 'refetchList'])
-const { getGood, deleteGood } = useGoods()
-const { data, cannotSave, save, clear } = useGood()
+const emit = defineEmits(["update:isOpened", "refetchList"]);
+const { getGood, deleteGood } = useGoods();
+const { data, cannotSave, save, clear } = useGood();
 
-const categoriesStore = useCategories()
-watch(() => props.isOpened, () => {
-  if (!props.isOpened) { return }
-  categoriesStore.getCategories()
-  clear()
+const categoriesStore = useCategories();
+watch(
+  () => props.isOpened,
+  () => {
+    if (!props.isOpened) {
+      return;
+    }
+    categoriesStore.getCategories();
+    clear();
 
-  if (props.id === 0) { return }
-  getGood(props.id)
-})
+    if (props.id === 0) {
+      return;
+    }
+    getGood(props.id);
+  }
+);
 
-const categoriesOptions = computed(() => categoriesStore.categories.map(c => ({
-  key: c.id,
-  name: c.title,
-  value: c.id
-})))
+const categoriesOptions = computed(() =>
+  categoriesStore.categories.map((c) => ({
+    key: c.id,
+    name: c.title,
+    value: c.id,
+  }))
+);
 
-async function askDelete () {
-  if (!props.id) { return }
+async function askDelete() {
+  if (!props.id) {
+    return;
+  }
 
-  if (!confirm('Вы уверены?')) { return }
+  if (!confirm("Вы уверены?")) {
+    return;
+  }
 
-  if (!await deleteGood(props.id)) { return }
+  if (!(await deleteGood(props.id))) {
+    return;
+  }
 
-  emit('refetchList')
-  emit('update:isOpened', false)
+  emit("refetchList");
+  emit("update:isOpened", false);
 }
 
-async function saveChanges () {
-  if (!await save(props.id)) { return }
+async function saveChanges() {
+  if (!(await save(props.id))) {
+    return;
+  }
 
-  emit('refetchList')
-  emit('update:isOpened', false)
+  emit("refetchList");
+  emit("update:isOpened", false);
 }
 </script>
 
 <template>
-  <div v-if="isOpened" class="flex justify-center items-center fixed w-screen bg-black bg-opacity-50 inset-0">
-    <section class="w-[90%] h-[90%] bg-slate-100 rounded-sm p-5 overflow-auto flex flex-col gap-5">
+  <div
+    v-if="isOpened"
+    class="flex justify-center items-center fixed w-screen bg-black bg-opacity-50 inset-0"
+  >
+    <section
+      class="w-[90%] h-[90%] bg-slate-100 rounded-sm p-5 overflow-auto flex flex-col gap-5"
+    >
       <header class="flex justify-between items-center text-3xl">
         <h2>Редактирование товара</h2>
-        <AdminUiControlButton name="material-symbols:close-rounded" @click="emit('update:isOpened', false)" />
+        <AdminUiControlButton
+          name="material-symbols:close-rounded"
+          @click="emit('update:isOpened', false)"
+        />
       </header>
       <article class="flex flex-col gap-5">
-        <AdminUiImageInput
-          id="img"
-          v-model="data.img"
-          label="Изображение"
-        />
+        <AdminUiImageInput id="img" v-model="data.img" label="Изображение" />
         <AdminUiDropdown
           id="category_id"
           v-model="data.category_id"
@@ -90,13 +111,9 @@ async function saveChanges () {
             id="weight"
             v-model="data.weight"
             type="text"
-            label="Вес/Фасовка"
+            label="Вес"
           />
-          <AdminUiMoneyInput
-            id="price"
-            v-model="data.price"
-            label="Цена"
-          />
+          <AdminUiMoneyInput id="price" v-model="data.price" label="Цена" />
           <AdminUiInput
             id="amount"
             v-model="data.amount"
@@ -118,10 +135,18 @@ async function saveChanges () {
         </div>
       </article>
       <footer class="mt-auto flex w-full justify-end gap-5">
-        <button v-if="id" class="bg-red-500 text-white px-5 py-3 rounded-md transition-colors disabled:bg-slate-400 hover:bg-red-600 active:bg-red-700" @click="askDelete">
+        <button
+          v-if="id"
+          class="bg-red-500 text-white px-5 py-3 rounded-md transition-colors disabled:bg-slate-400 hover:bg-red-600 active:bg-red-700"
+          @click="askDelete"
+        >
           Удалить
         </button>
-        <button :disabled="cannotSave" class="bg-slate-500 text-white px-5 py-3 rounded-md transition-colors disabled:bg-slate-400 hover:bg-slate-600 active:bg-slate-700" @click="saveChanges">
+        <button
+          :disabled="cannotSave"
+          class="bg-slate-500 text-white px-5 py-3 rounded-md transition-colors disabled:bg-slate-400 hover:bg-slate-600 active:bg-slate-700"
+          @click="saveChanges"
+        >
           Сохранить
         </button>
       </footer>

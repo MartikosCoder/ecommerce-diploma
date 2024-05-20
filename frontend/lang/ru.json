@@ -1,3 +1,119 @@
 {
-  "test": "Соси жопу"
+  "admin": {
+    "appeals": {
+      "list": "Список обращений",
+      "message": "Сообщение",
+      "modal": "Просмотр обращения",
+      "modalClose": "Закрыть обращение",
+      "tableUserName": "Имя пользователя",
+      "tableShowMessages": "Показать сообщения"
+    },
+    "categories": {
+      "list": "Список категорий",
+      "modal": "Редактирование категории",
+      "modalParentCategory": "Родительская категория"
+    },
+    "coupons": {
+      "list": "Список купонов",
+      "modal": "Редактирование купона",
+      "modalUseAmount": "Количество использований",
+      "rulesTitle": "Правила купона"
+    },
+    "goods": {
+      "list": "Список товаров",
+      "modal": "Редактирование товара",
+      "modalImage": "Изображение",
+      "modalOriginCountry": "Страна производства",
+      "modalWeight": "Вес",
+      "modalPrice": "Цена",
+      "modalAmount": "Доступное количество",
+      "modalDescription": "Описание",
+      "modalCharecteristics": "Характеристики"
+    },
+    "login": {
+      "title": "Авторизуйтесь для доступа",
+      "button": "Авторизоваться",
+      "idLabel": "Личный идентификатор",
+      "passwordLabel": "Пароль"
+    },
+    "menu": {
+      "catalog": "Каталог",
+      "categories": "Категории",
+      "goods": "Товары",
+      "orders": "Заказы",
+      "specialOffers": "Спец.предложения",
+      "promotions": "Акции",
+      "coupons": "Купоны",
+      "appeals": "Обращения"
+    },
+    "orders": {
+      "list": "Список заказов",
+      "modal": "Редактирование заказа",
+      "goodsAmount": "Количество",
+      "modalCash": "Наличными",
+      "modalCard": "Картой курьеру",
+      "modalNew": "Создан",
+      "modalInWork": "В работе",
+      "modalSuccess": "Выполнен",
+      "modalCanceled": "Отменен",
+      "modalDelivery": "Адрес доставки",
+      "modalComment": "Комментарий пользователя",
+      "modalCoupon": "Купон",
+      "modalGoods": "Товары",
+      "modalTotal": "Общая стоимость: ",
+      "modalGeneralInfo": "Общая информация",
+      "modalPayType": "Метод оплаты",
+      "modalDeliveryDate": "Дата доставки",
+      "modalDeliveryTimeFrom": "Время доставки (с)",
+      "modalDeliveryTimeTo": "Время доставки (до)",
+      "tableName": "Имя заказчика",
+      "userDeliveryCity": "Город",
+      "userDeliveryStreet": "Улица",
+      "userDeliveryHouse": "Дом",
+      "userDeliveryEntrance": "Подъезд",
+      "userDeliveryFloor": "Этаж",
+      "userDeliveryApartment": "Квартира"
+    },
+    "promotions": {
+      "list": "Список акций",
+      "modal": "Редактирование акции",
+      "modalNew": "Создана",
+      "modalActive": "Активна",
+      "modalFinished": "Завершена",
+      "modalMessage": "Информационное сообщение",
+      "rulesTitle": "Правила акции"
+    },
+    "inputs": {
+      "title": "Наименование",
+      "vendorCode": "Артикул",
+      "category": "Категория",
+      "discount": "Скидка (в %)",
+      "price": "Цена",
+      "code": "Код",
+      "totalDiscount": "Общая скидка (в %)",
+      "user": "Пользователь",
+      "userName": "Имя",
+      "userPhone": "Номер телефона",
+      "userEmail": "Электронная почта",
+      "status": "Статус"
+    },
+    "showDetails": "Показать подробности"
+  },
+  "client": {},
+  "errors": {
+    "title": "Ошибка",
+    "noId": "Не указан ID",
+    "noAuth": "Пользователь не авторизован",
+    "noField": "Не указано обязательное поле",
+    "wrongField": "Неверное поле",
+    "alreadyAuth": "Пользователь уже авторизован",
+    "notFound": "Данные не найдены",
+    "creationFailed": "Ошибка при создании",
+    "updateStatusFailed": "Изменение статуса невозможно"
+  },
+  "send": "Отправить",
+  "areYouSure": "Вы уверены?",
+  "delete": "Удалить",
+  "save": "Сохранить",
+  "messageMe": "Вы"
 }
