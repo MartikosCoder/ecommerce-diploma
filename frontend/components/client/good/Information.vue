@@ -20,20 +20,22 @@ defineProps<{
     </div>
     <div class="flex gap-2">
       <span class="text-sm text-gray-500">{{ good.origin_country }}</span>
-      <span class="text-sm text-gray-500">Артикул: {{ good.vendor_code }}</span>
+      <span class="text-sm text-gray-500">
+        {{ $t("inputs.vendorCode") }}: {{ good.vendor_code }}
+      </span>
     </div>
     <div class="flex flex-col gap-1 justify-center">
       <h2 class="text-2xl font-bold">{{ good.price }} ₴</h2>
-      <span>Фасовка: {{ good.weight }}</span>
+      <span>{{ $t("client.good.packaging") }}: {{ good.weight }}</span>
     </div>
     <div class="flex flex-col gap-1">
-      <h2 class="text-xl font-bold">Описание товара</h2>
+      <h2 class="text-xl font-bold">{{ $t("client.good.description") }}</h2>
       <p class="block max-h-96 overflow-auto">
         {{ good.description }}
       </p>
     </div>
     <div class="flex flex-col gap-1">
-      <h2 class="text-xl font-bold">Характеристика товара</h2>
+      <h2 class="text-xl font-bold">{{ $t("client.good.characteristics") }}</h2>
       <p class="block max-h-96 overflow-auto whitespace-pre-wrap">
         {{ good.characteristic }}
       </p>

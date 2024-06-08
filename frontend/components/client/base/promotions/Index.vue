@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { usePromotions } from '~/store/client/promotions'
+import { usePromotions } from "~/store/client/promotions";
 
-const promotionsStore = usePromotions()
+const promotionsStore = usePromotions();
 
-onMounted(promotionsStore.getPromotions)
-onServerPrefetch(promotionsStore.getPromotions)
+onMounted(promotionsStore.getPromotions);
+onServerPrefetch(promotionsStore.getPromotions);
 </script>
 
 <template>
-  <article v-if="promotionsStore.promotions.length > 0" class="p-2 flex flex-col gap-1 lg:px-10">
+  <article
+    v-if="promotionsStore.promotions.length > 0"
+    class="p-2 flex flex-col gap-1 lg:px-10"
+  >
     <h1 class="text-2xl lg:text-3xl font-bold">
-      Акции
+      {{ $t("menu.promotions") }}
     </h1>
     <ClientBasePromotionsCarousel :items="promotionsStore.promotions" />
   </article>

@@ -117,7 +117,7 @@ async function saveChanges() {
             id="weight"
             v-model="data.weight"
             type="text"
-            :label="$t('admin.goods.modalWeight')"
+            :label="$t('inputs.weight')"
           />
           <AdminUiMoneyInput
             id="price"

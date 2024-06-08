@@ -18,10 +18,10 @@ const { cannotOrder, order } = useOrder();
     >
       <Icon name="material-symbols:arrow-back-ios-new-rounded" size="1.25rem" />
       <h1 class="text-2xl lg:text-3xl font-bold">
-        Корзина
-        <span v-if="cartStore.cartItems.length > 0"
-          >{{ cartStore.totalCartPrice }} ₴</span
-        >
+        {{ $t("client.cart.title") }}
+        <span v-if="cartStore.cartItems.length > 0">
+          {{ cartStore.totalCartPrice }} ₴
+        </span>
       </h1>
     </header>
     <section
@@ -35,13 +35,15 @@ const { cannotOrder, order } = useOrder();
       />
     </section>
     <section v-else class="p-5">
-      <h2 class="text-xl lg:text-2xl">Ваша корзина пуста...</h2>
+      <h2 class="text-xl lg:text-2xl">{{ $t("client.cart.empty") }}</h2>
     </section>
     <section
       v-if="cartStore.cartItems.length > 0"
       class="p-2 flex flex-col gap-3 lg:px-10"
     >
-      <h2 class="text-2xl lg:text-3xl font-bold">Оформление заказа</h2>
+      <h2 class="text-2xl lg:text-3xl font-bold">
+        {{ $t("client.cart.order") }}
+      </h2>
       <ClientCartDeliveries />
       <ClientCartPayTypes />
       <ClientCartDates />
@@ -51,7 +53,7 @@ const { cannotOrder, order } = useOrder();
         class="p-3 bg-blue-700 rounded-lg disabled:bg-blue-400 hover:bg-blue-800 active:bg-blue-900 text-white"
         @click="order"
       >
-        Оформить заказ
+        {{ $t("client.cart.orderAction") }}
       </button>
     </section>
   </article>

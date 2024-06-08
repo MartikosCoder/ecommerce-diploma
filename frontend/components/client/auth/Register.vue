@@ -9,7 +9,7 @@ const { data, cannotRegister, register } = useRegister();
 <template>
   <section class="bg-white rounded-sm p-5 overflow-auto flex flex-col gap-5">
     <header class="flex justify-between items-center">
-      <h2 class="text-3xl font-bold">Регистрация</h2>
+      <h2 class="text-3xl font-bold">{{ $t("client.auth.registration") }}</h2>
       <ClientUiIconButton
         name="material-symbols:close-rounded"
         @click="closeModal"
@@ -19,8 +19,8 @@ const { data, cannotRegister, register } = useRegister();
       <ClientUiInput
         v-model:value="data.name"
         class="lg:w-full"
-        label="Имя"
-        placeholder="Иван"
+        :label="$t('inputs.userName')"
+        :placeholder="$t('inputs.placeholderName')"
         type="text"
       />
       <ClientUiInput
@@ -33,14 +33,14 @@ const { data, cannotRegister, register } = useRegister();
       <ClientUiInput
         v-model:value="data.phone"
         class="lg:w-full"
-        label="Номер телефона"
+        :label="$t('inputs.userPhone')"
         placeholder="380xxxxxxxxx"
         type="tel"
       />
       <ClientUiInput
         v-model:value="data.password"
         class="lg:w-full"
-        label="Пароль"
+        :label="$t('inputs.password')"
         placeholder="**********"
         type="password"
       />
@@ -51,13 +51,13 @@ const { data, cannotRegister, register } = useRegister();
         class="bg-blue-700 text-white px-5 py-3 rounded-md transition-colors disabled:bg-blue-400 hover:bg-blue-800 active:bg-blue-900"
         @click="register"
       >
-        Зарегистрироваться
+        {{ $t("client.auth.register") }}
       </button>
       <button
         class="bg-slate-500 text-white px-5 py-3 rounded-md transition-colors disabled:bg-slate-400 hover:bg-slate-600 active:bg-slate-700"
         @click="changeModalType('login')"
       >
-        Авторизоваться
+        {{ $t("client.auth.authorize") }}
       </button>
     </footer>
   </section>

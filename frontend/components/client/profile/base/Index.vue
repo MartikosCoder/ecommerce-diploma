@@ -6,14 +6,16 @@ const { data } = useProfile();
 
 <template>
   <article class="px-2 lg:px-10 w-full flex flex-col gap-5">
-    <h1 class="text-2xl lg:text-3xl font-bold">Личные данные</h1>
+    <h1 class="text-2xl lg:text-3xl font-bold">
+      {{ $t("client.profile.base.menu") }}
+    </h1>
     <section
       class="flex flex-col gap-6 lg:flex-row lg:flex-wrap lg:justify-center"
     >
       <ClientProfileBaseField
         v-model:value="data.name"
-        label="Имя"
-        placeholder="Иван"
+        :label="$t('inputs.userName')"
+        :placeholder="$t('inputs.placeholderName')"
         type="text"
       />
       <ClientProfileBaseField
@@ -24,13 +26,13 @@ const { data } = useProfile();
       />
       <ClientProfileBaseField
         v-model:value="data.phone"
-        label="Номер телефона"
+        :label="$t('inputs.userPhone')"
         placeholder="380xxxxxxxxx"
         type="tel"
       />
       <ClientProfileBaseField
         v-model:value="data.password"
-        label="Пароль"
+        :label="$t('inputs.password')"
         placeholder="**********"
         type="password"
       />

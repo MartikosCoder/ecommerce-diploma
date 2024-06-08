@@ -6,7 +6,9 @@ const comparisonStore = useComparison();
 
 <template>
   <article class="w-full p-2 flex flex-col gap-2 lg:px-10">
-    <h1 class="text-2xl lg:text-3xl font-bold">Список сравнения</h1>
+    <h1 class="text-2xl lg:text-3xl font-bold">
+      {{ $t("client.comparison.list") }}
+    </h1>
     <section
       v-if="comparisonStore.comparison.length > 0"
       class="w-full overflow-auto"
@@ -14,11 +16,15 @@ const comparisonStore = useComparison();
       <table class="w-full border-collapse border border-blue-800">
         <thead class="bg-blue-800 text-white text-left">
           <tr>
-            <th class="p-2">Наименование</th>
-            <th class="p-2">Изображение</th>
-            <th class="p-2 min-w-[15rem]">Характеристика</th>
-            <th class="p-2 min-w-[10rem]">Вес</th>
-            <th class="p-2 min-w-[6rem] lg:min-w-[5rem] xl:min-w-0">Цена</th>
+            <th class="p-2">{{ $t("inputs.title") }}</th>
+            <th class="p-2">{{ $t("inputs.image") }}</th>
+            <th class="p-2 min-w-[15rem]">
+              {{ $t("client.comparison.characteristics") }}
+            </th>
+            <th class="p-2 min-w-[10rem]">{{ $t("inputs.weight") }}</th>
+            <th class="p-2 min-w-[6rem] lg:min-w-[5rem] xl:min-w-0">
+              {{ $t("inputs.price") }}
+            </th>
             <th class="p-2" />
           </tr>
         </thead>
@@ -64,7 +70,9 @@ const comparisonStore = useComparison();
       </table>
     </section>
     <section v-else class="m-auto">
-      <h2 class="text-xl lg:text-2xl">У Вас нет товаров для сравнения...</h2>
+      <h2 class="text-xl lg:text-2xl">
+        {{ $t("client.comparison.notFound") }}
+      </h2>
     </section>
   </article>
 </template>

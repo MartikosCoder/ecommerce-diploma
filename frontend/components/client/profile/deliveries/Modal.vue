@@ -27,7 +27,9 @@ async function saveChanges() {
       class="w-[90%] bg-white rounded-sm p-5 overflow-auto flex flex-col gap-5"
     >
       <header class="flex justify-between items-center">
-        <h2 class="text-lg font-bold md:text-2xl">Редактирование адреса</h2>
+        <h2 class="text-lg font-bold md:text-2xl">
+          {{ $t("client.profile.deliveries.editTitle") }}
+        </h2>
         <ClientUiIconButton
           name="material-symbols:close-rounded"
           @click="emit('update:isOpened', false)"
@@ -36,42 +38,42 @@ async function saveChanges() {
       <article class="flex flex-col gap-5 lg:flex-row lg:flex-wrap">
         <ClientUiInput
           v-model:value="data.city"
-          label="Город"
+          :label="$t('client.profile.deliveries.city')"
           type="text"
-          placeholder="Киев"
+          :placeholder="$t('client.profile.deliveries.cityPlaceholder')"
         />
         <ClientUiInput
           v-model:value="data.street"
-          label="Улица"
+          :label="$t('client.profile.deliveries.street')"
           type="text"
-          placeholder="Льва Толстого"
+          :placeholder="$t('client.profile.deliveries.streetPlaceholder')"
         />
         <ClientUiInput
           v-model:value="data.house"
-          label="Дом"
+          :label="$t('client.profile.deliveries.house')"
           type="number"
           placeholder="12"
         />
         <ClientUiInput
           v-model:value="data.entrance"
-          label="Подъезд"
+          :label="$t('client.profile.deliveries.entrance')"
           type="number"
           placeholder="2"
         />
         <ClientUiInput
           v-model:value="data.floor"
-          label="Этаж"
+          :label="$t('client.profile.deliveries.floor')"
           type="number"
           placeholder="5"
         />
         <ClientUiInput
           v-model:value="data.apartment"
-          label="Квартира"
+          :label="$t('client.profile.deliveries.apartment')"
           type="number"
           placeholder="12"
         />
         <label class="w-full flex flex-col gap-1">
-          Комментарий к адресу
+          {{ $t("client.profile.deliveries.comment") }}
           <textarea
             v-model="data.commentary"
             class="max-w-xl lg:max-w-full border border-blue-900 p-2 rounded-lg resize-none overflow-auto"
@@ -86,7 +88,7 @@ async function saveChanges() {
           :disabled="cannotSave"
           @click="saveChanges"
         >
-          Сохранить
+          {{ $t("save") }}
         </button>
       </footer>
     </section>
