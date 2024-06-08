@@ -33,18 +33,7 @@
     "login": {
       "title": "Авторизуйтесь для доступа",
       "button": "Авторизоваться",
-      "idLabel": "Личный идентификатор",
-      "passwordLabel": "Пароль"
-    },
-    "menu": {
-      "catalog": "Каталог",
-      "categories": "Категории",
-      "goods": "Товары",
-      "orders": "Заказы",
-      "specialOffers": "Спец.предложения",
-      "promotions": "Акции",
-      "coupons": "Купоны",
-      "appeals": "Обращения"
+      "idLabel": "Личный идентификатор"
     },
     "orders": {
       "list": "Список заказов",
@@ -83,23 +72,111 @@
       "modalMessage": "Информационное сообщение",
       "rulesTitle": "Правила акции"
     },
-    "inputs": {
-      "title": "Наименование",
-      "vendorCode": "Артикул",
-      "category": "Категория",
-      "discount": "Скидка (в %)",
-      "price": "Цена",
-      "code": "Код",
-      "totalDiscount": "Общая скидка (в %)",
-      "user": "Пользователь",
-      "userName": "Имя",
-      "userPhone": "Номер телефона",
-      "userEmail": "Электронная почта",
-      "status": "Статус"
-    },
     "showDetails": "Показать подробности"
   },
-  "client": {},
+  "client": {
+    "auth": {
+      "authorization": "Авторизация",
+      "authorize": "Авторизоваться",
+      "register": "Зарегистрироваться"
+    },
+    "base": {
+      "mayBeInterested": "Может Вас заинтересовать"
+    },
+    "cart": {
+      "coupon": "Купон (опционально)",
+      "dateDelivery": "Дата доставки",
+      "timeDelivery": "Предпочтительное время доставки (рабочее время - c 8:00 до 20:00)",
+      "addressDelivery": "Адрес доставки",
+      "title": "Корзина",
+      "empty": "Ваша корзина пуста...",
+      "order": "Оформление заказа",
+      "orderAction": "Оформить заказ",
+      "cash": "Наличными",
+      "card": "Картой",
+      "payType": "Метод оплаты"
+    },
+    "catalog": {
+      "noGoods": "Нет товаров в данной категории",
+      "sort": "Сортировка",
+      "filter": "Фильтр",
+      "price": "Цена",
+      "apply": "Применить"
+    },
+    "comparison": {
+      "list": "Список сравнения",
+      "title": "Наименование",
+      "image": "Изображение",
+      "characteristics": "Характеристика",
+      "price": "Цена",
+      "notFound": "У Вас нет товаров для сравнения..."
+    },
+    "favourites": {
+      "list": "Список избранных товаров",
+      "notFound": "У Вас нет избранных товаров..."
+    },
+    "good": {
+      "addToCart": "Добавить в корзину",
+      "removeFromCart": "Убрать из корзины",
+      "packaging": "Фасовка",
+      "description": "Описание товара",
+      "characteristics": "Характеристика товара",
+      "review": "Отзывы",
+      "reviews": "отзыва/-ов",
+      "leaveReview": "Оставьте свой отзыв",
+      "rating": "Оценка (от 0 до 5)",
+      "message": "Сообщение"
+    },
+    "promotion": {
+      "initialDiscount": "Изначальная скидка:",
+      "fixedDiscounts": "Фиксированные скидки для категорий"
+    },
+    "profile": {
+      "appeals": {
+        "menu": "Обращения в тех.поддержку",
+        "modal": "Новое обращение",
+        "id": "Обращение №",
+        "name": "Сотрудник",
+        "message": "Сообщение",
+        "problem": "Сообщение о проблеме",
+        "send": "Отправить"
+      },
+      "personal": {
+        "menu": "Личные данные"
+      },
+      "address": {
+        "menu": "Адреса доставки",
+        "add": "Добавить адрес",
+        "editTitle": "Редактирование адреса",
+        "city": "Город",
+        "cityPlaceholder": "Киев",
+        "street": "Улица",
+        "streetPlaceholder": "Льва Толстого",
+        "house": "Дом",
+        "entrance": "Подъезд",
+        "floor": "Этаж",
+        "apartment": "Квартира",
+        "comment": "Комментарий к адресу"
+      },
+      "orders": {
+        "menu": "Заказы",
+        "list": "Список заказов",
+        "id": "Заказ №",
+        "total": "Общая стоимость:",
+        "date": "Дата доставки:",
+        "inWork": "В работе",
+        "success": "Завершен",
+        "canceled": "Отменен"
+      },
+      "coupons": {
+        "totalDiscount": "Общая скидка:",
+        "copySuccess": "Купон скопирован в буфер обмена",
+        "title": "Купоны",
+        "success": "Успех",
+        "personalDiscounts": "Частные скидки"
+      }
+    }
+  },
   "errors": {
     "title": "Ошибка",
     "noId": "Не указан ID",
@@ -110,6 +187,40 @@
     "notFound": "Данные не найдены",
     "creationFailed": "Ошибка при создании",
     "updateStatusFailed": "Изменение статуса невозможно"
+  },
+  "menu": {
+    "catalog": "Каталог",
+    "categories": "Категории",
+    "goods": "Товары",
+    "orders": "Заказы",
+    "specialOffers": "Спец.предложения",
+    "promotions": "Акции",
+    "coupons": "Купоны",
+    "appeals": "Обращения",
+    "main": "Главная",
+    "cart": "Корзина",
+    "favourites": "Избранное",
+    "comparison": "Сравнение",
+    "profile": "Профиль",
+    "specials": "Акции и купоны",
+    "techSupport": "Тех.поддержка",
+    "exit": "Выйти"
+  },
+  "inputs": {
+    "title": "Наименование",
+    "vendorCode": "Артикул",
+    "category": "Категория",
+    "discount": "Скидка (в %)",
+    "price": "Цена",
+    "code": "Код",
+    "totalDiscount": "Общая скидка (в %)",
+    "user": "Пользователь",
+    "userName": "Имя",
+    "placeholderName": "Иван",
+    "userPhone": "Номер телефона",
+    "userEmail": "Электронная почта",
+    "status": "Статус",
+    "password": "Пароль"
   },
   "send": "Отправить",
   "areYouSure": "Вы уверены?",
