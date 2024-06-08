@@ -4,6 +4,8 @@ import { useGoods } from "~/store/admin/goods";
 
 import { useGood } from "~/composables/admin/useGood";
 
+const { t } = useI18n();
+
 const props = defineProps<{
   isOpened: boolean;
   id: number;
@@ -43,7 +45,7 @@ async function askDelete() {
     return;
   }
 
-  if (!confirm("Вы уверены?")) {
+  if (!confirm(t("areYouSure"))) {
     return;
   }
 
@@ -74,18 +76,22 @@ async function saveChanges() {
       class="w-[90%] h-[90%] bg-slate-100 rounded-sm p-5 overflow-auto flex flex-col gap-5"
     >
       <header class="flex justify-between items-center text-3xl">
-        <h2>Редактирование товара</h2>
+        <h2>{{ t("admin.goods.modal") }}</h2>
         <AdminUiControlButton
           name="material-symbols:close-rounded"
           @click="emit('update:isOpened', false)"
         />
       </header>
       <article class="flex flex-col gap-5">
-        <AdminUiImageInput id="img" v-model="data.img" label="Изображение" />
+        <AdminUiImageInput
+          id="img"
+          v-model="data.img"
+          :label="$t('inputs.image')"
+        />
         <AdminUiDropdown
           id="category_id"
           v-model="data.category_id"
-          label="Категория"
+          :label="$t('inputs.category')"
           :options="categoriesOptions"
         />
         <div class="grid grid-cols-2 gap-2">
@@ -93,44 +99,48 @@ async function saveChanges() {
             id="title"
             v-model="data.title"
             type="text"
-            label="Наименование"
+            :label="$t('inputs.title')"
           />
           <AdminUiInput
             id="vendor_code"
             v-model="data.vendor_code"
             type="text"
-            label="Артикул"
+            :label="$t('inputs.vendorCode')"
           />
           <AdminUiInput
             id="origin_country"
             v-model="data.origin_country"
             type="text"
-            label="Страна производства"
+            :label="$t('admin.goods.modalOriginCountry')"
           />
           <AdminUiInput
             id="weight"
             v-model="data.weight"
             type="text"
-            label="Вес"
+            :label="$t('admin.goods.modalWeight')"
           />
-          <AdminUiMoneyInput id="price" v-model="data.price" label="Цена" />
+          <AdminUiMoneyInput
+            id="price"
+            v-model="data.price"
+            :label="$t('admin.goods.modalPrice')"
+          />
           <AdminUiInput
             id="amount"
             v-model="data.amount"
             type="number"
-            label="Доступное количество"
+            :label="$t('admin.goods.modalAmount')"
           />
         </div>
         <div class="grid grid-rows-2 gap-2">
           <AdminUiTextArea
             id="description"
             v-model="data.description"
-            label="Описание"
+            :label="$t('admin.goods.modalDescription')"
           />
           <AdminUiTextArea
             id="characteristic"
             v-model="data.characteristic"
-            label="Характеристика"
+            :label="$t('admin.goods.modalCharacteristic')"
           />
         </div>
       </article>
@@ -140,14 +150,14 @@ async function saveChanges() {
           class="bg-red-500 text-white px-5 py-3 rounded-md transition-colors disabled:bg-slate-400 hover:bg-red-600 active:bg-red-700"
           @click="askDelete"
         >
-          Удалить
+          {{ $t("delete") }}
         </button>
         <button
           :disabled="cannotSave"
           class="bg-slate-500 text-white px-5 py-3 rounded-md transition-colors disabled:bg-slate-400 hover:bg-slate-600 active:bg-slate-700"
           @click="saveChanges"
         >
-          Сохранить
+          {{ $t("save") }}
         </button>
       </footer>
     </section>

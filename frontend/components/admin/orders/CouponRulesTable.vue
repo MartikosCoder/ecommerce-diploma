@@ -1,23 +1,29 @@
 <script setup lang="ts">
 defineProps<{
-  rules: OrderRule[]
-}>()
+  rules: OrderRule[];
+}>();
 </script>
 
 <template>
-  <table class="text-xl w-full max-h-96 overflow-auto border-collapse border border-slate-500">
+  <table
+    class="text-xl w-full max-h-96 overflow-auto border-collapse border border-slate-500"
+  >
     <thead class="bg-slate-500 text-white text-left">
       <tr>
         <th class="p-2">
-          Категория
+          {{ $t("inputs.category") }}
         </th>
         <th class="p-2">
-          Скидка (в %)
+          {{ $t("inputs.discount") }}
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="rule in rules" :key="rule.category" class="border-b border-slate-500 hover:bg-slate-200 transition-colors select-none">
+      <tr
+        v-for="rule in rules"
+        :key="rule.category"
+        class="border-b border-slate-500 hover:bg-slate-200 transition-colors select-none"
+      >
         <td class="p-2">
           {{ rule.category }}
         </td>

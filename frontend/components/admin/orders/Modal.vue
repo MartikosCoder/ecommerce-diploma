@@ -3,6 +3,8 @@ import { useOrders } from "~/store/admin/orders";
 
 import { useOrder } from "~/composables/admin/useOrder";
 
+const { t } = useI18n();
+
 const props = defineProps<{
   isOpened: boolean;
   id: number;
@@ -46,12 +48,12 @@ const goodsSum = computed(() => {
 const payTypes = computed(() => [
   {
     key: "cash",
-    name: "Наличными",
+    name: t("admin.orders.modalCash"),
     value: "cash",
   },
   {
     key: "card",
-    name: "Картой курьеру",
+    name: t("admin.orders.modalCard"),
     value: "card",
   },
 ]);
@@ -59,22 +61,22 @@ const payTypes = computed(() => [
 const statuses = computed(() => [
   {
     key: "new",
-    name: "Создан",
+    name: t("admin.orders.modalNew"),
     value: "new",
   },
   {
     key: "in-work",
-    name: "В работе",
+    name: t("admin.orders.modalInWork"),
     value: "in-work",
   },
   {
     key: "success",
-    name: "Выполнен",
+    name: t("admin.orders.modalSuccess"),
     value: "success",
   },
   {
     key: "canceled",
-    name: "Отменен",
+    name: t("admin.orders.modalCanceled"),
     value: "canceled",
   },
 ]);
@@ -98,7 +100,7 @@ async function saveChanges() {
       class="w-[90%] h-[90%] bg-slate-100 rounded-sm p-5 overflow-auto flex flex-col gap-5"
     >
       <header class="flex justify-between items-center text-3xl">
-        <h2>Редактирование заказа</h2>
+        <h2>{{ t("admin.orders.modal") }}</h2>
         <AdminUiControlButton
           name="material-symbols:close-rounded"
           @click="emit('update:isOpened', false)"
@@ -106,54 +108,56 @@ async function saveChanges() {
       </header>
       <article class="flex flex-col gap-5">
         <section class="flex flex-col gap-2">
-          <h2 class="text-2xl">Пользователь</h2>
+          <h2 class="text-2xl">{{ t("inputs.user") }}</h2>
           <AdminOrdersUserTable :user="data.user" />
         </section>
         <section class="flex flex-col gap-2">
-          <h2 class="text-2xl">Адрес доставки</h2>
+          <h2 class="text-2xl">{{ t("admin.orders.modalDelivery") }}</h2>
           <div class="flex flex-col gap-2">
             <AdminOrdersUserDeliveryTable :user-delivery="data.user_delivery" />
             <AdminUiTextArea
               v-if="data.user_delivery.commentary"
               id="commentary"
               v-model="data.user_delivery.commentary"
-              label="Комментарий пользователя"
+              :label="$t('admin.orders.modalComment')"
               disabled
             />
           </div>
         </section>
         <section v-if="data.coupon" class="flex flex-col gap-2">
-          <h2 class="text-2xl">Купон</h2>
+          <h2 class="text-2xl">{{ t("admin.orders.modalCoupon") }}</h2>
           <div class="grid grid-cols-2 gap-2">
             <AdminUiInput
               id="code"
               v-model="data.coupon.code"
               type="text"
-              label="Код"
+              :label="$t('inputs.code')"
               disabled
             />
             <AdminUiInput
               id="total_discount"
               v-model="data.coupon.total_discount"
               type="text"
-              label="Общая скидка (в %)"
+              :label="$t('inputs.totalDiscount')"
               disabled
             />
           </div>
           <AdminOrdersCouponRulesTable :rules="data.coupon.rules" />
         </section>
         <section class="flex flex-col gap-2">
-          <h2 class="text-2xl">Товары</h2>
-          <p class="text-xl">Общая стоимость: {{ goodsSum }} ₴</p>
+          <h2 class="text-2xl">{{ t("admin.orders.modalGoods") }}</h2>
+          <p class="text-xl">
+            {{ t("admin.orders.modalTotal") }}: {{ goodsSum }} ₴
+          </p>
           <AdminOrdersGoodsTable :goods="data.goods" />
         </section>
         <section class="flex flex-col gap-2">
-          <h2 class="text-2xl">Общая информация</h2>
+          <h2 class="text-2xl">{{ t("admin.orders.modalGeneralInfo") }}</h2>
           <div class="grid grid-cols-2 gap-2">
             <AdminUiDropdown
               id="pay_type"
               v-model="data.pay_type"
-              label="Метод оплаты"
+              :label="$t('admin.orders.modalPayType')"
               :options="payTypes"
               disabled
             />
@@ -161,27 +165,27 @@ async function saveChanges() {
               id="delivery_date"
               v-model="data.delivery_date"
               type="text"
-              label="Дата доставки"
+              :label="$t('admin.orders.modalDeliveryDate')"
               disabled
             />
             <AdminUiInput
               id="delivery_from_time"
               v-model="data.delivery_from_time"
               type="text"
-              label="Время доставки (с)"
+              :label="$t('admin.orders.modalDeliveryTimeFrom')"
               disabled
             />
             <AdminUiInput
               id="delivery_to_time"
               v-model="data.delivery_to_time"
               type="text"
-              label="Время доставки (до)"
+              :label="$t('admin.orders.modalDeliveryTimeTo')"
               disabled
             />
             <AdminUiDropdown
               id="status"
               v-model="data.status"
-              label="Статус"
+              :label="$t('inputs.status')"
               :options="statuses"
             />
           </div>
@@ -193,7 +197,7 @@ async function saveChanges() {
           class="bg-slate-500 text-white px-5 py-3 rounded-md transition-colors disabled:bg-slate-400 hover:bg-slate-600 active:bg-slate-700"
           @click="saveChanges"
         >
-          Сохранить
+          {{ $t("save") }}
         </button>
       </footer>
     </section>

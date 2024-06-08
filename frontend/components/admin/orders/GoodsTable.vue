@@ -1,32 +1,38 @@
 <script setup lang="ts">
 defineProps<{
-  goods: OrderGood[]
-}>()
+  goods: OrderGood[];
+}>();
 </script>
 
 <template>
-  <table class="text-xl w-full max-h-96 overflow-auto border-collapse border border-slate-500">
+  <table
+    class="text-xl w-full max-h-96 overflow-auto border-collapse border border-slate-500"
+  >
     <thead class="bg-slate-500 text-white text-left">
       <tr>
         <th class="p-2">
-          Наименование
+          {{ $t("inputs.title") }}
         </th>
         <th class="p-2">
-          Категория
+          {{ $t("inputs.category") }}
         </th>
         <th class="p-2">
-          Артикул
+          {{ $t("inputs.vendorCode") }}
         </th>
         <th class="p-2">
-          Цена
+          {{ $t("inputs.price") }}
         </th>
         <th class="p-2">
-          Количество
+          {{ $t("admin.orders.goodsAmount") }}
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="good in goods" :key="good.vendor_code" class="border-b border-slate-500 hover:bg-slate-200 transition-colors select-none">
+      <tr
+        v-for="good in goods"
+        :key="good.vendor_code"
+        class="border-b border-slate-500 hover:bg-slate-200 transition-colors select-none"
+      >
         <td class="p-2">
           {{ good.title }}
         </td>

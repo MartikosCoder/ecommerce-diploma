@@ -1,29 +1,33 @@
 <script setup lang="ts">
-import { useGoods } from '~/store/admin/goods'
+import { useGoods } from "~/store/admin/goods";
 
-const emit = defineEmits(['openModal'])
+const emit = defineEmits(["openModal"]);
 
-const goodsStore = useGoods()
+const goodsStore = useGoods();
 </script>
 
 <template>
-  <table class="mt-10 overflow-auto text-xl w-full border-collapse border border-slate-500">
+  <table
+    class="mt-10 overflow-auto text-xl w-full border-collapse border border-slate-500"
+  >
     <thead class="bg-slate-500 text-white text-left">
       <tr>
+        <th class="p-2">ID</th>
         <th class="p-2">
-          ID
+          {{ $t("inputs.vendorCode") }}
         </th>
         <th class="p-2">
-          Артикул
-        </th>
-        <th class="p-2">
-          Наименование
+          {{ $t("inputs.title") }}
         </th>
         <th class="p-2 w-1/4" />
       </tr>
     </thead>
     <tbody v-if="goodsStore.goods.length > 0">
-      <tr v-for="good in goodsStore.goods" :key="good.id" class="border-b border-slate-500 hover:bg-slate-200 transition-colors select-none">
+      <tr
+        v-for="good in goodsStore.goods"
+        :key="good.id"
+        class="border-b border-slate-500 hover:bg-slate-200 transition-colors select-none"
+      >
         <td class="p-2">
           {{ good.id }}
         </td>
@@ -34,8 +38,11 @@ const goodsStore = useGoods()
           {{ good.title }}
         </td>
         <td class="text-center">
-          <button class="cursor-pointer hover:bg-slate-300 rounded-lg active:bg-slate-400 p-2 transition-colors" @click="emit('openModal', good.id)">
-            Показать подробности
+          <button
+            class="cursor-pointer hover:bg-slate-300 rounded-lg active:bg-slate-400 p-2 transition-colors"
+            @click="emit('openModal', good.id)"
+          >
+            {{ $t("admin.showDetails") }}
           </button>
         </td>
       </tr>

@@ -1,25 +1,55 @@
 <script setup lang="ts">
-import { useUser } from '~/store/admin/user'
+import { useUser } from "~/store/admin/user";
 
-const { user } = useUser()
+const { user } = useUser();
 
-const isContent = computed(() => user?.type === 'content' || user?.type === 'full')
-const isTech = computed(() => user?.type === 'tech' || user?.type === 'full')
+const isContent = computed(
+  () => user?.type === "content" || user?.type === "full"
+);
+const isTech = computed(() => user?.type === "tech" || user?.type === "full");
 </script>
 
 <template>
   <nav class="border-r border-slate-300 flex flex-col">
     <section class="p-5 flex flex-col gap-5">
-      <AdminMenuLinkGroup v-if="isContent" title="Каталог">
-        <AdminMenuLink to="/admin/goods" icon="material-symbols:view-list-outline-rounded" title="Товары" />
-        <AdminMenuLink to="/admin/categories" icon="material-symbols:category-outline-rounded" title="Категории" />
+      <AdminMenuLinkGroup v-if="isContent" :title="$t('menu.catalog')">
+        <AdminMenuLink
+          to="/admin/goods"
+          icon="material-symbols:view-list-outline-rounded"
+          :title="$t('menu.goods')"
+        />
+        <AdminMenuLink
+          to="/admin/categories"
+          icon="material-symbols:category-outline-rounded"
+          :title="$t('menu.categories')"
+        />
       </AdminMenuLinkGroup>
-      <AdminMenuLink v-if="isContent" class="text-xl" to="/admin/orders" icon="material-symbols:chrome-reader-mode-outline-rounded" title="Заказы" />
-      <AdminMenuLinkGroup v-if="isContent" title="Спец.предложения">
-        <AdminMenuLink to="/admin/promotions" icon="material-symbols:info-outline-rounded" title="Акции" />
-        <AdminMenuLink to="/admin/coupons" icon="mingcute:coupon-line" title="Купоны" />
+      <AdminMenuLink
+        v-if="isContent"
+        class="text-xl"
+        to="/admin/orders"
+        icon="material-symbols:chrome-reader-mode-outline-rounded"
+        :title="$t('menu.orders')"
+      />
+      <AdminMenuLinkGroup v-if="isContent" :title="$t('menu.specialOffers')">
+        <AdminMenuLink
+          to="/admin/promotions"
+          icon="material-symbols:info-outline-rounded"
+          :title="$t('menu.promotions')"
+        />
+        <AdminMenuLink
+          to="/admin/coupons"
+          icon="mingcute:coupon-line"
+          :title="$t('menu.coupons')"
+        />
       </AdminMenuLinkGroup>
-      <AdminMenuLink v-if="isTech" class="text-xl" to="/admin/appeals" icon="material-symbols:person-outline-rounded" title="Обращения" />
+      <AdminMenuLink
+        v-if="isTech"
+        class="text-xl"
+        to="/admin/appeals"
+        icon="material-symbols:person-outline-rounded"
+        :title="$t('menu.appeals')"
+      />
     </section>
     <AdminMenuUser />
   </nav>

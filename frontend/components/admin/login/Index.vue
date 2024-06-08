@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { useLogin } from '~/composables/admin/useLogin'
+import { useLogin } from "~/composables/admin/useLogin";
 
-const { data, cannotLogin, login } = useLogin()
+const { data, cannotLogin, login } = useLogin();
 </script>
 
 <template>
-  <main class="bg-slate-300 text-xl grid place-items-center p-5 rounded-xl gap-10 shadow-xl sm:p-10 transition-all">
+  <main
+    class="bg-slate-300 text-xl grid place-items-center p-5 rounded-xl gap-10 shadow-xl sm:p-10 transition-all"
+  >
     <h1 class="font-bold">
-      Авторизуйтесь для доступа
+      {{ $t("admin.login.title") }}
     </h1>
     <form class="w-full grid gap-5">
       <AdminUiInput
@@ -24,7 +26,7 @@ const { data, cannotLogin, login } = useLogin()
       class="w-full bg-slate-500 text-white p-2 rounded-md transition-colors disabled:bg-slate-400 hover:bg-slate-600 active:bg-slate-700"
       @click="login"
     >
-      Авторизоваться
+      {{ $t("admin.login.button") }}
     </button>
   </main>
 </template>

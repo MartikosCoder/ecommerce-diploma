@@ -1,47 +1,56 @@
-import { useVuelidate } from '@vuelidate/core'
-import { required, numeric, minLength } from '@vuelidate/validators'
-import { useUser } from '~/store/admin/user'
+import { useVuelidate } from "@vuelidate/core";
+import { required, numeric, minLength } from "@vuelidate/validators";
+import { useUser } from "~/store/admin/user";
 
-export function useLogin () {
+export function useLogin() {
+  const { t } = useI18n();
+
   const data = ref({
     id: {
-      type: 'text',
-      label: 'Личный идентификатор',
-      value: ''
+      type: "text",
+      label: t("admin.login.idLabel"),
+      value: "",
     },
     password: {
-      type: 'password',
-      label: 'Пароль',
-      value: ''
-    }
-  })
+      type: "password",
+      label: t("inputs.password"),
+      value: "",
+    },
+  });
 
-  const pending = ref(false)
+  const pending = ref(false);
 
   const rules = {
     id: {
-      value: { required, numeric }
+      value: { required, numeric },
     },
     password: {
-      value: { required, minLengthValue: minLength(8) }
+      value: { required, minLengthValue: minLength(8) },
+    },
+  };
+  const validator = useVuelidate(rules, data);
+
+  const cannotLogin = computed(() => pending.value || validator.value.$invalid);
+
+  async function login() {
+    if (cannotLogin.value) {
+      return;
     }
-  }
-  const validator = useVuelidate(rules, data)
 
-  const cannotLogin = computed(() => pending.value || validator.value.$invalid)
+    const { loginUser } = useUser();
 
-  async function login () {
-    if (cannotLogin.value) { return }
+    pending.value = true;
+    const result = await loginUser(
+      +data.value.id.value,
+      data.value.password.value
+    );
+    pending.value = false;
 
-    const { loginUser } = useUser()
-
-    pending.value = true
-    const result = await loginUser(+data.value.id.value, data.value.password.value)
-    pending.value = false
-
-    if (!result) { return }
-    await navigateTo('/admin')
+    if (!result) {
+      return;
+    }
+    await navigateTo("/admin");
   }
 
-  return { data, validator, cannotLogin, login }
+  return { data, validator, cannotLogin, login };
 }
