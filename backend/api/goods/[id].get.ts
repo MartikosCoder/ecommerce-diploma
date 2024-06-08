@@ -1,52 +1,56 @@
-import * as pg from 'pg'
-const { Pool } = pg.default
+import * as pg from "pg";
+const { Pool } = pg.default;
 
 export default defineEventHandler(async (event) => {
-  const id = event.context.params?.id
+  const id = event.context.params?.id;
   if (id === undefined) {
     throw createError({
       statusCode: 400,
-      message: 'Не указан id товара'
-    })
+    });
   }
 
   const pool = new Pool({
     ssl: {
-      mode: 'require'
-    }
-  })
+      mode: "require",
+    },
+  });
 
-  const goodSQL = await pool.query(`
+  const goodSQL = await pool.query(
+    `
     SELECT i.*, COALESCE(ROUND(AVG(score), 2),0) total, COALESCE(COUNT(score),0) total_reviews 
     FROM "Items" i
     LEFT JOIN "Item_Reviews" ir ON ir.item_id = i.id
     WHERE i.id = $1 AND i.amount > 0
     GROUP BY i.id
-  `, [+id])
+  `,
+    [+id]
+  );
 
   if (goodSQL.rows.length === 0) {
-    await pool.end()
+    await pool.end();
     throw createError({
-      statusCode: 400,
-      message: 'Не удалось найти указанный товар'
-    })
+      statusCode: 404,
+    });
   }
 
-  const reviewsSQL = await pool.query(`
+  const reviewsSQL = await pool.query(
+    `
     SELECT u.name, commentary as message, score as rating
     FROM "Item_Reviews" ir
     JOIN "Users" u ON ir.user_id = u.id
     WHERE item_id = $1
-  `, [+id])
+  `,
+    [+id]
+  );
 
-  await pool.end()
+  await pool.end();
 
-  const good = goodSQL.rows[0]
+  const good = goodSQL.rows[0];
   good.rating = {
     total: good.total,
     total_reviews: good.total_reviews,
-    reviews: reviewsSQL.rows
-  }
+    reviews: reviewsSQL.rows,
+  };
 
-  return good
-})
+  return good;
+});

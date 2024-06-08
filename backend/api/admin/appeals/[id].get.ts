@@ -12,7 +12,6 @@ export default defineEventHandler(async (event) => {
   if (id === undefined) {
     throw createError({
       statusCode: 400,
-      message: "Не указан id обращения",
     });
   }
 
@@ -20,7 +19,6 @@ export default defineEventHandler(async (event) => {
   if (!isValidToken(token)) {
     throw createError({
       statusCode: 403,
-      message: "Пользователь не авторизован",
     });
   }
 
@@ -45,8 +43,7 @@ export default defineEventHandler(async (event) => {
   if (appealSQL.rows.length === 0) {
     await pool.end();
     throw createError({
-      statusCode: 400,
-      message: "Обращение недоступно",
+      statusCode: 404,
     });
   }
 
