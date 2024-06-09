@@ -140,7 +140,7 @@ async function saveChanges() {
           <AdminUiTextArea
             id="characteristic"
             v-model="data.characteristic"
-            :label="$t('admin.goods.modalCharacteristic')"
+            :label="$t('admin.goods.modalCharecteristics')"
           />
         </div>
       </article>
