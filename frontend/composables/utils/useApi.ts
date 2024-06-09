@@ -1,19 +1,5 @@
-import { notify } from "@kyvg/vue3-notification";
-
 export function useApi(url: string, props?: object) {
-  const { t } = useI18n();
-
-  const errorsMap = computed(() => ({
-    0: t("errors.title"),
-    400: t("errors.noId"),
-    403: t("errors.noAuth"),
-    404: t("errors.notFound"),
-    405: t("errors.noField"),
-    406: t("errors.alreadyAuth"),
-    407: t("errors.creationFailed"),
-    408: t("errors.updateStatusFailed"),
-  }));
-
+  const globalApiErrors = useState<number[]>("api-errors", () => []);
   const apiError = ref(undefined as any | undefined);
 
   watch(apiError, async () => {
@@ -21,18 +7,8 @@ export function useApi(url: string, props?: object) {
       return;
     }
 
-    const statusCode = (apiError.value.statusCode ||
-      0) as keyof typeof errorsMap.value;
-
-    notify({
-      type: "error",
-      title: t("errors.title"),
-      text: errorsMap.value[statusCode],
-    });
-
-    if (apiError.value?.statusCode === 403) {
-      await navigateTo("/");
-    }
+    const statusCode = (apiError.value.statusCode || 0) as number;
+    globalApiErrors.value.push(statusCode);
   });
 
   async function post(): Promise<false | object> {
