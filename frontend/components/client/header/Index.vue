@@ -5,6 +5,7 @@ const tempLocale = ref(currentLocale.value);
 
 watch(tempLocale, (newLocale) => {
   setLocale(newLocale);
+  reloadNuxtApp();
 });
 </script>
 
