@@ -21,8 +21,8 @@ const { toggleFavourite } = useFavourites();
 const cartButton = computed(() =>
   t(
     cartStore.itemInCart(goodsStore.currentGood!.id)
-      ? "client.cart.removeFromCart"
-      : "client.cart.addToCart"
+      ? "client.good.removeFromCart"
+      : "client.good.addToCart"
   )
 );
 
