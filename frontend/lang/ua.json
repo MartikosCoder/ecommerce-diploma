@@ -1,3 +1,244 @@
 {
-  "test": "Смокчи дупу"
+  "admin": {
+    "appeals": {
+      "list": "Список звернень",
+      "message": "Повідомлення",
+      "modal": "Перегляд звернення",
+      "modalClose": "Закрити звернення",
+      "tableUserName": "Ім'я користувача",
+      "tableShowMessages": "Показати повідомлення"
+    },
+    "categories": {
+      "list": "Список категорій",
+      "modal": "Редагування категорії",
+      "modalParentCategory": "Батьківська категорія"
+    },
+    "coupons": {
+      "list": "Список купонів",
+      "modal": "Редагування купона",
+      "modalUseAmount": "Кількість використань",
+      "rulesTitle": "Правила купона"
+    },
+    "goods": {
+      "list": "Список товарів",
+      "modal": "Список товарів",
+      "modalOriginCountry": "Країна виробництва",
+      "modalPrice": "Ціна",
+      "modalAmount": "Доступна кількість",
+      "modalDescription": "Опис",
+      "modalCharecteristics": "Характеристики"
+    },
+    "login": {
+      "title": "Авторизуйтесь для доступу",
+      "button": "Авторизуватися",
+      "idLabel": "Особистий ідентифікатор"
+    },
+    "orders": {
+      "list": "Список замовлень",
+      "modal": "Редагування замовлення",
+      "goodsAmount": "Кількість",
+      "modalCash": "Готівкою",
+      "modalCard": "Картою кур'єру",
+      "modalNew": "Створено",
+      "modalInWork": "У роботі",
+      "modalSuccess": "Виконано",
+      "modalCanceled": "Скасовано",
+      "modalDelivery": "Адреса доставки",
+      "modalComment": "Коментар користувача",
+      "modalCoupon": "Купон",
+      "modalGoods": "Товари",
+      "modalTotal": "Загальна вартість: ",
+      "modalGeneralInfo": "Загальна інформація",
+      "modalPayType": "Метод оплати",
+      "modalDeliveryDate": "Дата доставки",
+      "modalDeliveryTimeFrom": "Час доставки (з)",
+      "modalDeliveryTimeTo": "Час доставки (до)",
+      "tableName": "Ім'я замовника",
+      "userDeliveryCity": "Місто",
+      "userDeliveryStreet": "Вулиця",
+      "userDeliveryHouse": "Дім",
+      "userDeliveryEntrance": "Під'їзд",
+      "userDeliveryFloor": "Поверх",
+      "userDeliveryApartment": "Квартира"
+    },
+    "promotions": {
+      "list": "Список акцій",
+      "modal": "Редагування акції",
+      "modalNew": "Створена",
+      "modalActive": "Активна",
+      "modalFinished": "Завершено",
+      "modalMessage": "Інформаційне повідомлення",
+      "rulesTitle": "Правила акції"
+    },
+    "showDetails": "Показати подробиці"
+  },
+  "client": {
+    "auth": {
+      "authorization": "Авторизація",
+      "authorize": "Авторизуватися",
+      "register": "Зареєструватися",
+      "registration": "Реєстрація"
+    },
+    "base": {
+      "mayBeInterested": "Може Вас зацікавити"
+    },
+    "cart": {
+      "coupon": "Купон (опціонально)",
+      "datesTitle": "Дата і час доставки",
+      "dateDelivery": "Дата доставки",
+      "timeDelivery": "Переважний час доставки (робочий час - з 8:00 до 20:00)",
+      "addressDelivery": "Адреса доставки",
+      "title": "Кошик",
+      "empty": "Ваш кошик порожній...",
+      "order": "Оформлення замовлення",
+      "orderAction": "Оформити замовлення",
+      "cash": "Готівкою",
+      "card": "Картою",
+      "payType": "Метод оплати"
+    },
+    "catalog": {
+      "noGoods": "Немає товарів у цій категорії",
+      "sort": "Сортування",
+      "filter": "Фільтр",
+      "price": "Ціна",
+      "apply": "Застосувати",
+      "from": "Від",
+      "to": "До",
+      "default": "За замовчуванням",
+      "priceDown": "За зменшенням ціни",
+      "priceUp": "За зростанням ціни",
+      "rating": "За рейтингом"
+    },
+    "comparison": {
+      "list": "Список порівняння",
+      "title": "Найменування",
+      "characteristics": "Характеристика",
+      "notFound": "У Вас немає товарів для порівняння..."
+    },
+    "favourites": {
+      "list": "Список обраних товарів",
+      "notFound": "У Вас немає обраних товарів..."
+    },
+    "good": {
+      "addToCart": "Додати в кошик",
+      "removeFromCart": "Прибрати з кошика",
+      "packaging": "Фасування",
+      "description": "Опис товару",
+      "characteristics": "Характеристика товару",
+      "review": "Відгуки",
+      "reviews": "відгуку/-ів",
+      "leaveReview": "Залиште свій відгук",
+      "rating": "Оцінка (від 0 до 5)",
+      "message": "Повідомлення"
+    },
+    "promotion": {
+      "initialDiscount": "Початкова знижка:",
+      "fixedDiscounts": "Фіксовані знижки для категорій"
+    },
+    "profile": {
+      "appeals": {
+        "menu": "Звернення до тех.підтримки",
+        "new": "Новий",
+        "inWork": "У роботі",
+        "closed": "Закрито",
+        "modal": "Нове звернення",
+        "id": "Звернення №",
+        "modalTitle": "Звернення",
+        "name": "Співробітник",
+        "message": "Повідомлення",
+        "problem": "Повідомлення про проблему"
+      },
+      "personal": {
+        "menu": "Особисті дані"
+      },
+      "deliveries": {
+        "menu": "Адреса доставки",
+        "add": "Додати",
+        "editTitle": "Редагування адреси",
+        "city": "Місто",
+        "cityPlaceholder": "Київ",
+        "street": "Вулиця",
+        "streetPlaceholder": "Льва Толстого",
+        "house": "Дім",
+        "entrance": "Під'їзд",
+        "floor": "Поверх",
+        "apartment": "Квартира",
+        "comment": "Коментар до адреси"
+      },
+      "orders": {
+        "menu": "Замовлення",
+        "list": "Замовлення",
+        "id": "Замовлення №",
+        "total": "Загальна вартість:",
+        "date": "Дата доставки:",
+        "new": "Новий",
+        "inWork": "У роботі",
+        "success": "Завершено",
+        "canceled": "Скасовано",
+        "from": "з",
+        "to": "до"
+      },
+      "coupons": {
+        "totalDiscount": "Загальна знижка:",
+        "copySuccess": "Купон скопійовано в буфер обміну",
+        "title": "Купони",
+        "success": "Успіх",
+        "personalDiscounts": "Приватні знижки"
+      }
+    }
+  },
+  "errors": {
+    "title": "Помилка",
+    "noId": "Не вказано ID",
+    "noAuth": "Користувач не авторизований",
+    "noField": "Не вказано обов'язкове поле",
+    "wrongField": "Неправильне поле",
+    "alreadyAuth": "Користувач уже авторизований",
+    "notFound": "Дані не знайдено",
+    "creationFailed": "Помилка під час створення",
+    "updateStatusFailed": "Зміна статусу неможлива"
+  },
+  "menu": {
+    "catalog": "Каталог",
+    "categories": "Категорії",
+    "goods": "Товари",
+    "orders": "Замовлення",
+    "specialOffers": "Спец.пропозиції",
+    "promotions": "Акції",
+    "coupons": "Купони",
+    "appeals": "Звернення",
+    "main": "Головна",
+    "cart": "Кошик",
+    "favourites": "Вибране",
+    "comparison": "Порівняння",
+    "profile": "Профіль",
+    "specials": "Акції та купони",
+    "techSupport": "Тех.підтримка",
+    "exit": "Вийти"
+  },
+  "inputs": {
+    "image": "Зображення",
+    "title": "Найменування",
+    "vendorCode": "Артикул",
+    "category": "Категорія",
+    "discount": "Знижка (у %)",
+    "price": "Ціна",
+    "code": "Код",
+    "totalDiscount": "Загальна знижка (у %)",
+    "user": "Користувач",
+    "userName": "Ім'я",
+    "placeholderName": "Джон",
+    "userPhone": "Номер телефону",
+    "userEmail": "Електронна пошта",
+    "status": "Статус",
+    "password": "Пароль",
+    "coupon": "Купон",
+    "weight": "Вага",
+    "search": "Пошук"
+  },
+  "send": "Відправити",
+  "areYouSure": "Ви впевнені?",
+  "delete": "Видалити",
+  "save": "Зберегти",
+  "messageMe": "Ви"
 }

@@ -1,3 +1,244 @@
 {
-  "test": "Suck ass"
+  "admin": {
+    "appeals": {
+      "list": "List of references",
+      "message": "Message",
+      "modal": "View Appeal",
+      "modalClose": "Close the appeal",
+      "tableUserName": "User Name",
+      "tableShowMessages": "Showing messages"
+    },
+    "categories": {
+      "list": "List of categories",
+      "modal": "Editing a category",
+      "modalParentCategory": "Parental category"
+    },
+    "coupons": {
+      "list": "List of coupons",
+      "modal": "Editing a coupon",
+      "modalUseAmount": "Number of uses",
+      "rulesTitle": "Coupon Rules"
+    },
+    "goods": {
+      "list": "List of goods",
+      "modal": "Editing a product",
+      "modalOriginCountry": "Country of manufacture",
+      "modalPrice": "Price",
+      "modalAmount": "Available quantity",
+      "modalDescription": "Description",
+      "modalCharecteristics": "Characteristics"
+    },
+    "login": {
+      "title": "Authorize for access",
+      "button": "Authorize",
+      "idLabel": "Personal ID"
+    },
+    "orders": {
+      "list": "Order list",
+      "modal": "Order editing",
+      "goodsAmount": "Quantity",
+      "modalCash": "Cash",
+      "modalCard": "By card to the courier",
+      "modalNew": "Created",
+      "modalInWork": "In the work",
+      "modalSuccess": "Done",
+      "modalCanceled": "Canceled",
+      "modalDelivery": "Delivery address",
+      "modalComment": "User comment",
+      "modalCoupon": "Coupon",
+      "modalGoods": "Goods",
+      "modalTotal": "Total cost: ",
+      "modalGeneralInfo": "General information",
+      "modalPayType": "Method of payment",
+      "modalDeliveryDate": "Date of Delivery",
+      "modalDeliveryTimeFrom": "Delivery time (from)",
+      "modalDeliveryTimeTo": "Delivery time (to)",
+      "tableName": "Customer's name",
+      "userDeliveryCity": "City",
+      "userDeliveryStreet": "Street",
+      "userDeliveryHouse": "House",
+      "userDeliveryEntrance": "Approach",
+      "userDeliveryFloor": "Floor",
+      "userDeliveryApartment": "Apartment"
+    },
+    "promotions": {
+      "list": "Stock list",
+      "modal": "Editing a share",
+      "modalNew": "Established",
+      "modalActive": "Active",
+      "modalFinished": "Completed",
+      "modalMessage": "Information message",
+      "rulesTitle": "Promotion rules"
+    },
+    "showDetails": "Показать подробности"
+  },
+  "client": {
+    "auth": {
+      "authorization": "Authorization",
+      "authorize": "Authorize",
+      "register": "Sign up",
+      "registration": "Registration"
+    },
+    "base": {
+      "mayBeInterested": "You may be interested in"
+    },
+    "cart": {
+      "coupon": "Coupon (optional)",
+      "datesTitle": "Date and time of delivery",
+      "dateDelivery": "Date of Delivery",
+      "timeDelivery": "Preferred delivery time (working hours - from 8:00 to 20:00)",
+      "addressDelivery": "Delivery address",
+      "title": "Shopping cart",
+      "empty": "Your cart is empty...",
+      "order": "Order placement",
+      "orderAction": "Place an order",
+      "cash": "Cash",
+      "card": "By card",
+      "payType": "Method of payment"
+    },
+    "catalog": {
+      "noGoods": "No products in this category",
+      "sort": "Sorting",
+      "filter": "Filter",
+      "price": "Price",
+      "apply": "Apply",
+      "from": "From",
+      "to": "To",
+      "default": "Default",
+      "priceDown": "Price reduction",
+      "priceUp": "Ascending in price",
+      "rating": "By ranking"
+    },
+    "comparison": {
+      "list": "Comparison list",
+      "title": "Name",
+      "characteristics": "Characterization",
+      "notFound": "You have no products to compare..."
+    },
+    "favourites": {
+      "list": "List of favorite products",
+      "notFound": "You do not have any favorite products..."
+    },
+    "good": {
+      "addToCart": "Add to cart",
+      "removeFromCart": "Remove from cart",
+      "packaging": "Packing",
+      "description": "Product Description",
+      "characteristics": "Product characteristic",
+      "review": "Testimonials",
+      "reviews": "feedback/s",
+      "leaveReview": "Leave a review",
+      "rating": "Score (0 to 5)",
+      "message": "Message"
+    },
+    "promotion": {
+      "initialDiscount": "Initial discount:",
+      "fixedDiscounts": "Fixed discounts for categories"
+    },
+    "profile": {
+      "appeals": {
+        "menu": "Appeals to technical support",
+        "new": "New",
+        "inWork": "In the works",
+        "closed": "Closed",
+        "modal": "New address",
+        "id": "Appeal №",
+        "modalTitle": "Appeal",
+        "name": "Staff member",
+        "message": "Message",
+        "problem": "Reporting a problem"
+      },
+      "personal": {
+        "menu": "Personal data"
+      },
+      "deliveries": {
+        "menu": "Delivery addresses",
+        "add": "Add",
+        "editTitle": "Editing an address",
+        "city": "City",
+        "cityPlaceholder": "Kiev",
+        "street": "Street",
+        "streetPlaceholder": "Leo Tolstoy",
+        "house": "House",
+        "entrance": "Approach",
+        "floor": "Floor",
+        "apartment": "Apartment",
+        "comment": "Address comment"
+      },
+      "orders": {
+        "menu": "Orders",
+        "list": "Order list",
+        "id": "Ordering №",
+        "total": "Total cost:",
+        "date": "Date of Delivery:",
+        "new": "New",
+        "inWork": "In the works",
+        "success": "Completed",
+        "canceled": "Canceled",
+        "from": "from",
+        "to": "to"
+      },
+      "coupons": {
+        "totalDiscount": "Total discount:",
+        "copySuccess": "Coupon copied to clipboard",
+        "title": "Coupons",
+        "success": "Success",
+        "personalDiscounts": "Private discounts"
+      }
+    }
+  },
+  "errors": {
+    "title": "Error",
+    "noId": "No ID specified",
+    "noAuth": "User not authorized",
+    "noField": "No mandatory field specified",
+    "wrongField": "Wrong field",
+    "alreadyAuth": "The user is already authorized",
+    "notFound": "Data not found",
+    "creationFailed": "Creation error",
+    "updateStatusFailed": "It is not possible to change the status"
+  },
+  "menu": {
+    "catalog": "Catalog",
+    "categories": "Categories",
+    "goods": "Goods",
+    "orders": "Orders",
+    "specialOffers": "Special offers",
+    "promotions": "Stocks",
+    "coupons": "Coupons",
+    "appeals": "Appeals",
+    "main": "Main",
+    "cart": "Shopping cart",
+    "favourites": "Favorites",
+    "comparison": "Comparison",
+    "profile": "Profile",
+    "specials": "Promotions and coupons",
+    "techSupport": "Technical support",
+    "exit": "Get out"
+  },
+  "inputs": {
+    "image": "Image",
+    "title": "Name",
+    "vendorCode": "Item",
+    "category": "Category",
+    "discount": "Discount (in %)",
+    "price": "Price",
+    "code": "Code",
+    "totalDiscount": "Total discount (in %)",
+    "user": "User",
+    "userName": "Name",
+    "placeholderName": "John",
+    "userPhone": "Phone number",
+    "userEmail": "Email",
+    "status": "Status",
+    "password": "Password",
+    "coupon": "Coupon",
+    "weight": "Weight",
+    "search": "Search"
+  },
+  "send": "Send",
+  "areYouSure": "Are you sure?",
+  "delete": "Delete",
+  "save": "Save",
+  "messageMe": "You"
 }
