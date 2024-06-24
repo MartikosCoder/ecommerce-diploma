@@ -57,7 +57,7 @@ async function askCancel(id?: number) {
           <span class="text-sm md:text-lg">
             {{ $t("client.profile.orders.date") }} {{ order.delivery_date }}
             {{ $t("client.profile.orders.from") }}
-            {{ order.delivery_from_time }} {{ $t("client.profile.order.to") }}
+            {{ order.delivery_from_time }} {{ $t("client.profile.orders.to") }}
             {{ order.delivery_to_time }}
           </span>
           <span class="text-lg md:text-xl font-bold">{{
